@@ -1,12 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
-</head>
-<body>
-  <h1>Lista de exercicios - Soluções:</h1>
- 
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+
+    <div>
+      <div class="input-fields">
+        <label for="valor">
+          Valor :
+          <input type="text" id="valor" />
+        </label>
+        <label for="troco">
+          Pagamento:
+          <input type="text" id="troco" />
+        </label>
+        <button onclick="calculaTroco()">Calcular</button>
+      </div>
+
+      <div class="resultado"></div>
+    </div>
+
+
+
+    <script>
+
+      const precoProduto =     document.querySelector("#valor")
+      const valorPagoCliente = document.querySelector("#troco")
+      const result = document.querySelector(".resultado")
+
+      const btnCalc = document.querySelector("button")
+
+      function calculaTroco() {
+
+        if(Number(valorPagoCliente.value) < Number(precoProduto.value)){
+          alert("Valor pago insuficiente!")
+        }else{
+
+          let resultado = Number(valorPagoCliente.value) - Number(precoProduto.value)
+        }
+
+        result.innerHTML=`<h1>Seu troco ${resultado.toFixed(2)}<h1/>`
+       
+      }
+    </script>
+  </body>
 </html>
